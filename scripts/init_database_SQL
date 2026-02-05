@@ -7,3 +7,27 @@ Script Purpose:
 WARNING:
   Running this script will drop the entire 'DataWarehouse' database if it exists. All data in the database will be permanently deleted. Proceed with caution and ensure you have proper backups before running this script.
 */
+
+USE MASTER;
+GO
+
+-- Drop and recreate teh "datawarehouse" database
+IF EXISTS (SELECT 1 FROM sys.databases WHERE name = "datawarehouse")
+BEGIN
+    ALTER DATABASE datawarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE datawarehouse;
+END;
+GO
+
+-- Creating a "Datawarehouse";
+CREATE DATABASE datawarehouse;
+
+
+USE datawarehouse;
+
+CREATE SCHEMA bronze; -- we are creating the schema on bronze
+GO                    -- "GO" is like seperator between those 
+CREATE SCHEMA silver;
+GO
+CREATE SCHEMA gold;
+GO
