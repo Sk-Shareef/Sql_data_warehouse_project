@@ -1,39 +1,46 @@
-# Data Warehouse and Analytics Project
+# Data Warehouse and Analytics Project 
 
 Welcome to the **Data Warehouse and Analytics Project** repository!
 
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio projec highlights industry best practices in data engineering and analytics.
+This project demonstrates a comprehensive data warehousing and analytics solution using the **Medallion Architecture**. It covers the end-to-end process from raw data ingestion to generating actionable business insights using SQL Server.
 
 ----
+
 ## Project Requirements
 
-#### Building the Data Warehouse ( Data Engineering)
+### 1. Data Engineering (Building the Data Warehouse)
 
-#### Objective 
-Develop a modern data warehouse using SQL Server to consolidate saled data, enabling analytical reporting and informed decision-making.
+**Objective:**
+Develop a modern data warehouse using SQL Server to consolidate retail data, enabling analytical reporting and informed decision-making.
 
-#### Specifications
-- **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
-- **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only; historization of data is not required.
-- **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+**Specifications:**
+- **Data Sources:** Utilizes the **Sample - Superstore** dataset, architected to simulate two distinct source systems (ERP and CRM) to demonstrate data integration techniques.
+- **Architecture:** Implements a **Medallion Architecture**:
+  - **Bronze (Raw):** Landing the data exactly as it appears in the source.
+  - **Silver (Cleansed):** Standardizing data types, fixing date formats, and handling nulls.
+  - **Gold (Analytics):** Business-ready tables designed for reporting.
+- **Data Quality:** Systematic cleansing of customer segments, product categories, and transaction inconsistencies.
+- **Integration:** Merging disparate datasets into a single, unified star schema.
+- **Automation:** Using **Stored Procedures** to manage the ETL pipeline with built-in error handling (`TRY...CATCH`).
 
-#### BI: Analytics & Reporting (Data Analytics)
+### 2. Data Analytics (BI: Analytics & Reporting)
 
-#### Objective
+**Objective:**
 Develop SQL-based analytics to deliver detailed insights into:
-- **Customer Behavior**
-- **Product Performance**
-- **Sales Trends**
-
-These insights empower stakeholders with key business metrics, enabling strategic decision-making.
+- **Customer Behavior:** Identifying high-value segments and customer loyalty.
+- **Product Performance:** Analyzing category-level profitability and sub-category trends.
+- **Sales Trends:** Tracking revenue growth and shipping efficiency across different regions.
 
 ----
 
+## Technical Stack
+- **Database:** Microsoft SQL Server
+- **Language:** T-SQL (Stored Procedures, Views, DDL/DML)
+- **Architecture:** Medallion (Bronze -> Silver -> Gold)
+- **Dataset:** Sample - Superstore Retail Data
+
 ## License
-This project is licensed under the [MIT License) (LICENSE). You are free to use, modify, and share this project with proper attribution.
+This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
 
-#About Me
-
-Hi there! I'm **SHAREEF SHAIK**. I'm a student and enjoying doing on data analysis projects.
+## About Me
+Hi there! I'm **SHAREEF SHAIK**. I'm a student passionate about data engineering and analytics. I enjoy building data-driven solutions and exploring how raw information can be transformed into strategic business value.
